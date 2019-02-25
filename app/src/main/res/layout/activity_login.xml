@@ -31,7 +31,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/username"
-                            android:inputType="text"/>
+                            android:inputType="text"
+                            tools:text="@{login.username}"/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -45,7 +46,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/password"
-                            android:inputType="textPassword"/>
+                            android:inputType="textPassword"
+                            tools:text="@{login.password}"/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -54,7 +56,8 @@
                         android:id="@+id/buttonLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/button_login"/>
+                        android:text="@string/button_login"
+                        android:onClick="@{login::clickLogin}"/>
 
             </LinearLayout>
 
