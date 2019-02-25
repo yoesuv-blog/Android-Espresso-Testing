@@ -9,7 +9,7 @@ import com.yoesuv.myespresso.databinding.ItemListBinding
 import com.yoesuv.myespresso.menu.list.models.PlaceModel
 import com.yoesuv.myespresso.menu.list.viewmodels.ItemListViewModel
 
-class MyListAdapter(val myList: MutableList<PlaceModel>): RecyclerView.Adapter<MyListAdapter.MyViewHolder>() {
+class MyListAdapter(private val myList: MutableList<PlaceModel>): RecyclerView.Adapter<MyListAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MyViewHolder {
         val inflater = LayoutInflater.from(parent.context)
