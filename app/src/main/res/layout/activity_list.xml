@@ -12,11 +12,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerViewList"
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_list"/>
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/item_list"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </RelativeLayout>
 

@@ -11,13 +11,15 @@ import com.yoesuv.myespresso.menu.list.viewmodels.MyListViewModel
 class MyListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListBinding
-    private lateinit var viewModelMy: MyListViewModel
+    private lateinit var viewModel: MyListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_list)
-        viewModelMy = ViewModelProviders.of(this).get(MyListViewModel::class.java)
-        binding.list = viewModelMy
+        viewModel = ViewModelProviders.of(this).get(MyListViewModel::class.java)
+        binding.list = viewModel
+
+        viewModel.getListPlace()
     }
 
 }
