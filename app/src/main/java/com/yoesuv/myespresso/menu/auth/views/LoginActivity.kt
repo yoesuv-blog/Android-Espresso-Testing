@@ -7,6 +7,8 @@ import android.os.Bundle
 import com.yoesuv.myespresso.R
 import com.yoesuv.myespresso.databinding.ActivityLoginBinding
 import com.yoesuv.myespresso.menu.auth.viewmodels.LoginViewModel
+import com.yoesuv.myespresso.menu.auth.viewmodels.LoginViewModelProviders
+import java.lang.ref.WeakReference
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProviders.of(this,LoginViewModelProviders(application, WeakReference(this))).get(LoginViewModel::class.java)
         binding.login = viewModel
     }
 }

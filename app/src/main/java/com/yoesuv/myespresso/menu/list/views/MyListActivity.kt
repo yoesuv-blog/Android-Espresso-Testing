@@ -6,18 +6,18 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.yoesuv.myespresso.R
 import com.yoesuv.myespresso.databinding.ActivityListBinding
-import com.yoesuv.myespresso.menu.list.viewmodels.ListViewModel
+import com.yoesuv.myespresso.menu.list.viewmodels.MyListViewModel
 
-class ListActivity : AppCompatActivity() {
+class MyListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListBinding
-    private lateinit var viewModel: ListViewModel
+    private lateinit var viewModelMy: MyListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_list)
-        viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
-        binding.list = viewModel
+        viewModelMy = ViewModelProviders.of(this).get(MyListViewModel::class.java)
+        binding.list = viewModelMy
     }
 
 }
