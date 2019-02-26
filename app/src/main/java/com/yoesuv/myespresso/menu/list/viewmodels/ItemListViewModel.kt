@@ -11,7 +11,7 @@ import com.yoesuv.myespresso.menu.list.models.PlaceModel
 import com.yoesuv.myespresso.menu.list.views.DetailMyListActivity
 import java.lang.ref.WeakReference
 
-class ItemListViewModel(placeModel: PlaceModel, private val weakContext: WeakReference<Context>): ViewModel() {
+class ItemListViewModel(private val placeModel: PlaceModel, private val weakContext: WeakReference<Context>): ViewModel() {
 
     var title: ObservableField<String> = ObservableField()
     var place: ObservableField<String> = ObservableField()
@@ -26,6 +26,7 @@ class ItemListViewModel(placeModel: PlaceModel, private val weakContext: WeakRef
     fun clickItem(view: View) {
         Log.d(Constants.LOG_DEBUG,"ItemListViewModel # click item ${title.get()}")
         val intent = Intent(weakContext.get(), DetailMyListActivity::class.java)
+        intent.putExtra(DetailMyListActivity.EXTRA_DATA_PLACE, placeModel)
         weakContext.get()?.startActivity(intent)
     }
 

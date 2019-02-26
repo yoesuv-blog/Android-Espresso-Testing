@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
+                tools:loadImage="@{detail.image}"
                 app:srcCompat="@drawable/placeholder_image"/>
 
         <android.support.v7.widget.AppCompatTextView
@@ -29,6 +30,7 @@
                 android:layout_marginRight="@dimen/layout_detail_margin"
                 android:textStyle="bold"
                 android:textSize="22sp"
+                android:text="@{detail.title}"
                 tools:text="Lorem Ipsum"/>
 
         <android.support.v7.widget.AppCompatTextView
@@ -38,6 +40,7 @@
                 android:layout_marginLeft="@dimen/layout_detail_margin"
                 android:layout_marginRight="@dimen/layout_detail_margin"
                 android:textSize="18sp"
+                android:text="@{detail.description}"
                 tools:text="@string/lorem_ipsum"/>
 
     </LinearLayout>
