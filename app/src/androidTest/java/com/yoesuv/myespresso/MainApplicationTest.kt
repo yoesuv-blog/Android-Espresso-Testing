@@ -2,7 +2,7 @@ package com.yoesuv.myespresso
 
 import android.os.SystemClock
 import android.support.test.InstrumentationRegistry
-import android.support.test.espresso.Espresso
+import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.*
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers.withId
@@ -32,42 +32,42 @@ class MainApplicationTest{
 
         //login failed
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.editTextLoginUsername)).perform(click()).perform(typeText("admin")).perform(closeSoftKeyboard())
+        onView(withId(R.id.editTextLoginUsername)).perform(click()).perform(typeText("admin")).perform(closeSoftKeyboard())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.editTextLoginPassword)).perform(click()).perform(typeText("passwordd")).perform(closeSoftKeyboard())
+        onView(withId(R.id.editTextLoginPassword)).perform(click()).perform(typeText("passwordd")).perform(closeSoftKeyboard())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.buttonLogin)).perform(click())
+        onView(withId(R.id.buttonLogin)).perform(click())
         SystemClock.sleep(delay)
         SystemClock.sleep(delay)
 
-        Espresso.onView(withId(R.id.editTextLoginUsername)).perform(clearText())
-        Espresso.onView(withId(R.id.editTextLoginPassword)).perform(clearText())
+        onView(withId(R.id.editTextLoginUsername)).perform(clearText())
+        onView(withId(R.id.editTextLoginPassword)).perform(clearText())
 
         //login success
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.editTextLoginUsername)).perform(click()).perform(typeText("admin")).perform(closeSoftKeyboard())
+        onView(withId(R.id.editTextLoginUsername)).perform(click()).perform(typeText("admin")).perform(closeSoftKeyboard())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.editTextLoginPassword)).perform(click()).perform(typeText("password")).perform(closeSoftKeyboard())
+        onView(withId(R.id.editTextLoginPassword)).perform(click()).perform(typeText("password")).perform(closeSoftKeyboard())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.buttonLogin)).perform(click())
+        onView(withId(R.id.buttonLogin)).perform(click())
         SystemClock.sleep(delay)
 
         //show list data
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        onView(withId(R.id.recyclerViewList)).perform(swipeUp())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        onView(withId(R.id.recyclerViewList)).perform(swipeUp())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        onView(withId(R.id.recyclerViewList)).perform(swipeDown())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        onView(withId(R.id.recyclerViewList)).perform(swipeDown())
         SystemClock.sleep(delay)
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        onView(withId(R.id.recyclerViewList)).perform(swipeDown())
         SystemClock.sleep(delay)
 
         // recyclerView item click
-        Espresso.onView(withId(R.id.recyclerViewList)).perform(RecyclerViewActions.actionOnItemAtPosition<MyListAdapter.MyViewHolder>(0, click()))
+        onView(withId(R.id.recyclerViewList)).perform(RecyclerViewActions.actionOnItemAtPosition<MyListAdapter.MyViewHolder>(0, click()))
         SystemClock.sleep(delay)
         device.pressBack()
 
