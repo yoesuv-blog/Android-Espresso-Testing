@@ -2,7 +2,9 @@ package com.yoesuv.myespresso.utils.bindings
 
 import android.databinding.BindingAdapter
 import android.support.v7.widget.AppCompatEditText
+import android.support.v7.widget.AppCompatImageView
 import android.text.TextWatcher
+import com.bumptech.glide.Glide
 import com.yoesuv.myespresso.R
 
 class Converters {
@@ -30,6 +32,15 @@ class Converters {
                 view.setText(newValue)
             }
 
+        }
+
+        @BindingAdapter("loadImage")
+        @JvmStatic fun loadImage(imageView: AppCompatImageView, imageUrl: String) {
+            Glide.with(imageView.context)
+                .load(imageUrl)
+                .placeholder(R.drawable.placeholder_image)
+                .error(R.drawable.placeholder_image)
+                .into(imageView)
         }
 
     }

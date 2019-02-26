@@ -11,12 +11,13 @@
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp">
+                    android:paddingBottom="@dimen/item_recycler_view_list_padding">
 
         <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/imageViewItemList"
                 android:layout_width="@dimen/image_view_icon_list"
                 android:layout_height="@dimen/image_view_icon_list"
+                tools:loadImage="@{itemList.thumbnail}"
                 app:srcCompat="@drawable/placeholder_image"/>
 
         <LinearLayout
