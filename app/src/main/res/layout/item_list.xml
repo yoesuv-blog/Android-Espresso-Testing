@@ -11,7 +11,8 @@
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/item_recycler_view_list_padding">
+                    android:paddingBottom="@dimen/item_recycler_view_list_padding"
+                    android:onClick="@{itemList::clickItem}">
 
         <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/imageViewItemList"

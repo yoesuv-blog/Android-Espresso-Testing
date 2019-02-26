@@ -8,6 +8,7 @@ import com.yoesuv.myespresso.R
 import com.yoesuv.myespresso.databinding.ItemListBinding
 import com.yoesuv.myespresso.menu.list.models.PlaceModel
 import com.yoesuv.myespresso.menu.list.viewmodels.ItemListViewModel
+import java.lang.ref.WeakReference
 
 class MyListAdapter(private val myList: MutableList<PlaceModel>): RecyclerView.Adapter<MyListAdapter.MyViewHolder>() {
 
@@ -25,10 +26,10 @@ class MyListAdapter(private val myList: MutableList<PlaceModel>): RecyclerView.A
         holder.bindView(myList[holder.adapterPosition])
     }
 
-    class MyViewHolder(val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindView(placeModel: PlaceModel){
-            val viewModel = ItemListViewModel(placeModel)
+            val viewModel = ItemListViewModel(placeModel, WeakReference(binding.root.context))
             binding.itemList = viewModel
         }
 
