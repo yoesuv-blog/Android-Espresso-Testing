@@ -4,12 +4,14 @@ import android.os.SystemClock
 import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.action.ViewActions.*
+import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.filters.LargeTest
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import android.support.test.uiautomator.UiDevice
 import com.yoesuv.myespresso.menu.auth.views.LoginActivity
+import com.yoesuv.myespresso.menu.list.adapters.MyListAdapter
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -62,6 +64,13 @@ class MainApplicationTest{
         Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
         SystemClock.sleep(delay)
         Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        SystemClock.sleep(delay)
+
+        // recyclerView item click
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(RecyclerViewActions.actionOnItemAtPosition<MyListAdapter.MyViewHolder>(0, click()))
+        SystemClock.sleep(delay)
+        device.pressBack()
+
         SystemClock.sleep(delay)
     }
 }
