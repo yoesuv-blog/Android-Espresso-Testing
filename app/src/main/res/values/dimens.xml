@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_login_margin">16dp</dimen>
+    <dimen name="image_view_icon_list">80dp</dimen>
+    <dimen name="item_recycler_view_list_padding">4dp</dimen>
+    <dimen name="layout_detail_margin">16dp</dimen>
+</resources>
