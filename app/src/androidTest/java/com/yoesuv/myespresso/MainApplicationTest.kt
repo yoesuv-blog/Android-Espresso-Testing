@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 @LargeTest
 class MainApplicationTest{
 
-    private val delay = 1000L
+    private val delay = 2000L
     private val device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
     @JvmField
@@ -48,6 +48,20 @@ class MainApplicationTest{
         Espresso.onView(withId(R.id.editTextLoginPassword)).perform(click()).perform(typeText("password")).perform(closeSoftKeyboard())
         SystemClock.sleep(delay)
         Espresso.onView(withId(R.id.buttonLogin)).perform(click())
+        SystemClock.sleep(delay)
+
+        //show list data
+        SystemClock.sleep(delay)
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        SystemClock.sleep(delay)
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeUp())
+        SystemClock.sleep(delay)
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        SystemClock.sleep(delay)
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
+        SystemClock.sleep(delay)
+        Espresso.onView(withId(R.id.recyclerViewList)).perform(swipeDown())
         SystemClock.sleep(delay)
     }
 }
