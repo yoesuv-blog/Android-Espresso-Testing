@@ -57,7 +57,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/button_login"
-                        android:onClick="@{login::clickLogin}"/>
+                        android:textColor="@android:color/white"
+                        android:onClick="@{login::clickLogin}"
+                        android:theme="@style/buttonPrimary"/>
 
             </LinearLayout>
 
