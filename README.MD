@@ -1,6 +1,7 @@
-# Android Espresso Test 1.0.0 #
+# Android Espresso Test v1.0.0 #
 
-try test app via Espresso
+try test app via Espresso<br/>
+run test class ![here](https://github.com/yoesuv-blog/Android-Espresso-Testing/blob/master/app/src/androidTest/java/com/yoesuv/myespresso/MainApplicationTest.kt)
 
 this app use ![MVVM Pattern](https://github.com/yoesuv-blog/Android-MVVM-Networking).
 
